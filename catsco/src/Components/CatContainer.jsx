@@ -1,7 +1,7 @@
+import React from 'react'
 import { Link } from 'react-router-dom';
-import {.json } from './.json'
 
-function Nav() {
+function Categories() {
   return (
     <nav>
       <ul>
@@ -24,3 +24,5 @@ function Nav() {
     </nav>
   );
 }
+
+export default Categories;
