@@ -7,7 +7,7 @@ function Category(props) {
 
   useEffect(() => {
     const getCategory = async () => {
-      const response = await axios.get('API')
+      const response = await axios.get(' https://cat-co.herokuapp.com/api/')
       setCategory(response.data)
     }
     getCategory()
@@ -17,6 +17,7 @@ function Category(props) {
   return (
     <div className="category">
       <h1>{category.category}</h1>
+      <Products products={category.products} />
       {loading ? <p>Loading...</p> : <Products products={products} />}
     </div>
   );

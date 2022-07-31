@@ -1,6 +1,6 @@
 import { Link, Routes, Route } from "react-router-dom";
 import React from "react";
-import Categories from "./Categories";
+import Categories from "./Components/Categories";
 import './App.css';
 
 function App() {
