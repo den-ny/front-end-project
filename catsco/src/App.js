@@ -38,11 +38,11 @@ const App = () => {
         </form>
       <div></div>
       <nav className="navContainer">
-        <button onClick={handleClick}>Furniture</button>
-        <button onClick={handleClick}>Food</button>
-        <button onClick={handleClick}>Toys</button>
-        <button onClick={handleClick}>Accessories</button>
-        <button onClick={handleClick}>Litter</button>
+        <button onClick={handleClick} id="bed">Furniture</button>
+        <button onClick={handleClick} id="fish">Food</button>
+        <button onClick={handleClick} id="yarn">Toys</button>
+        <button onClick={handleClick} id="shoes">Accessories</button>
+        <button onClick={handleClick} id="toilet">Litter</button>
       </nav>
       <div>
         { display ? <Products products={filteredProducts} /> : null}

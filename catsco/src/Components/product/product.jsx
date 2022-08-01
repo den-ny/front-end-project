@@ -23,7 +23,7 @@ const Product = ({ product }) => {
             {product.productName}
           </Typography>
           <Typography variant='h5' >
-            {product.price}
+            ${product.price}
           </Typography>
         </div>
         <Typography>
