@@ -1,26 +1,18 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
+import Product from '../product/product.jsx';
 
-import Product from './product/product';
-
-const products = [
-  { id: 1, name: 'furniture', description: 'Bed', price: '$10' },
-  { id: 2, name: 'toys', description: 'ball', price: '$5' },
-
-]
-
-
-const Products = () => {
+const Products = ({products}) => {
   return (
 
     <main>
-      <grid container justify='center' spacing={4}>
+      <Grid container justify='center' spacing={4}>
         {products.map((product) => (
-          <grid item key={product.id}> xs={12} sm={6} md{4} lg{3}
+          <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}> 
             <Product product={product} />
-          </grid>
+          </Grid>
         ))}
-      </grid>
+      </Grid>
     </main>
   )
 }

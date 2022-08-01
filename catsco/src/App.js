@@ -1,31 +1,51 @@
-import { Link, Routes, Route } from "react-router-dom";
-import React from "react";
-import Categories from "./Components/Category";
-import './App.css';
-import Products from './Components/products/products';
+import { useState, useEffect } from "react";
+import axios from "axios";
+// import Categories from "./Components/Category";
+import "./App.css";
+import Products from "./Components/products/products.jsx";
 import SearchBar from "./Components/SearchBar";
 
 const App = () => {
+  const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [display, setDisplay] = useState(false);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await axios.get(
+        "https://cat-co.herokuapp.com/api/products/all"
+      );
+      setProducts(response.data);
+      setFilteredProducts(response.data);
+    };
+    getProducts();
+  }, []);
+
+  const handleClick = (e) => {
+    const category = e.target.innerText.toLowerCase();
+    const filteredProducts = products.filter(
+      (product) => product.category === category
+    );
+    setFilteredProducts(filteredProducts);
+    setDisplay(true);
+  };
+
   return (
     <div className="App">
       <SearchBar />
+      <div></div>
+      <nav>
+        <button onClick={handleClick}>Furniture</button>
+        <button onClick={handleClick}>Food</button>
+        <button onClick={handleClick}>Toys</button>
+        <button onClick={handleClick}>Accessories</button>
+        <button onClick={handleClick}>Litter</button>
+      </nav>
       <div>
-        <Products />
-
+        { display ? <Products products={filteredProducts} /> : null}
       </div>
-      <main>
-        {/* <Categories /> */}
-
-        {/* <Routes>
-          <Route path="/furniture" element={<Furniture />} />
-          <Route path="/food" element={<Food />} />
-          <Route path="/toys" element={<Toys />} />
-          <Route path="/accessories" element={<Accessories />} />
-          <Route path="/litter" element={<Litter />} />
-      </Routes> */}
-      </main>
     </div>
-  )
-}
+  );
+};
 
 export default App;
