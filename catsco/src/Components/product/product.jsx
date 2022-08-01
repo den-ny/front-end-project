@@ -23,12 +23,16 @@ const Product = ({ product }) => {
             {product.productName}
           </Typography>
           <Typography variant='h5' >
-            {product.price}
+            ${product.price}
           </Typography>
         </div>
         <Typography>
           <img src={product.photoSrc} />
+<<<<<<< HEAD
         </Typography> 
+=======
+        </Typography>
+>>>>>>> origin
         <Typography variant='h6' color='textSecondary'>
           {product.description}
         </Typography>

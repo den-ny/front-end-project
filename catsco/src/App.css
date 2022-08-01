@@ -1,12 +1,148 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header{
+  background-image: url('https://i.imgur.com/rgEUDfm.gif');
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
 }
-
+.navContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2a30aa;
+  padding: 10px;
+}
+button {
+  background-color: #2a30aa;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+#search-button {
+  background-color: gray;
+  color: black;
+  border: none;
+  padding: 10px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 5px;
+}
+/* #bed{
+  :before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  border-radius: 5em;
+background: url("https://i.imgur.com/gsJ95EN.jpg?1");
+ z-index: 1;
+background-size: cover;
+  background-position: center;
+background-repeat: no-repeat;
+  transition: all .5s ease;
+}
+:hover:before {
+  opacity: 1;
+}
+}
+#fish{
+  :before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  border-radius: 5em;
+background: url("Your_URL");
+ z-index: 1;
+background-size: cover;
+  background-position: center;
+background-repeat: no-repeat;
+  transition: all .5s ease;
+}
+:hover:before {
+  opacity: 1;
+}
+}
+#yarn{
+  :before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  border-radius: 5em;
+background: url("Your_URL");
+ z-index: 1;
+background-size: cover;
+  background-position: center;
+background-repeat: no-repeat;
+  transition: all .5s ease;
+}
+:hover:before {
+  opacity: 1;
+}
+}
+#shoes{
+  :before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  border-radius: 5em;
+background: url("Your_URL");
+ z-index: 1;
+background-size: cover;
+  background-position: center;
+background-repeat: no-repeat;
+  transition: all .5s ease;
+}
+:hover:before {
+  opacity: 1;
+}
+}
+#toilet{
+  :before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  border-radius: 5em;
+background: url("Your_URL");
+ z-index: 1;
+background-size: cover;
+  background-position: center;
+background-repeat: no-repeat;
+  transition: all .5s ease;
+}
+:hover:before {
+  opacity: 1;
+}
+} */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -24,9 +160,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {

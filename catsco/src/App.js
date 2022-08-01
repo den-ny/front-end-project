@@ -32,14 +32,17 @@ const App = () => {
 
   return (
     <div className="App">
-      <SearchBar />
+      <header><h1>Catco</h1></header>
+      <form>
+        <SearchBar />
+        </form>
       <div></div>
-      <nav>
-        <button onClick={handleClick}>Furniture</button>
-        <button onClick={handleClick}>Food</button>
-        <button onClick={handleClick}>Toys</button>
-        <button onClick={handleClick}>Accessories</button>
-        <button onClick={handleClick}>Litter</button>
+      <nav className="navContainer">
+        <button onClick={handleClick} id="bed">Furniture</button>
+        <button onClick={handleClick} id="fish">Food</button>
+        <button onClick={handleClick} id="yarn">Toys</button>
+        <button onClick={handleClick} id="shoes">Accessories</button>
+        <button onClick={handleClick} id="toilet">Litter</button>
       </nav>
       <div>
         {display ? <Products products={filteredProducts} /> : null}
