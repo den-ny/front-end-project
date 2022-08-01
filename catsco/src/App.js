@@ -42,7 +42,7 @@ const App = () => {
         <button onClick={handleClick}>Litter</button>
       </nav>
       <div>
-        { display ? <Products products={filteredProducts} /> : null}
+        {display ? <Products products={filteredProducts} /> : null}
       </div>
     </div>
   );

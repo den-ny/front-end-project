@@ -26,6 +26,9 @@ const Product = ({ product }) => {
             {product.price}
           </Typography>
         </div>
+        <Typography>
+          <img src={product.photoSrc} />
+        </Typography> 
         <Typography variant='h6' color='textSecondary'>
           {product.description}
         </Typography>
