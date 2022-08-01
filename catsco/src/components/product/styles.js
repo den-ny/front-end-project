@@ -1,10 +1,6 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/styles';
 
-// const makestyles = () => {
-//   console.log(makeStyles)
-// }
-
-const useStyles = makeStyles({
+function makestyles(() => ({
   root: {
     maxWidth: '100%',
   },
@@ -21,13 +17,6 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
   },
 
+}));
 
-
-})
-
-// (() => ({
-
-
-// }));
-
-export default useStyles
+export default makestyles

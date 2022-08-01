@@ -9,7 +9,7 @@ const Product = ({ product }) => {
   const classes = useStyles();
 
   return (
-    <card> className={classes.root}
+    <card className={classes.root}>
       <cardMedia classname={classes.media} image='' title={product.name} />
       <cardContent>
         <div className={classes.cardContent}>

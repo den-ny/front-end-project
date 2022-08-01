@@ -2,7 +2,7 @@ import { Link, Routes, Route } from "react-router-dom";
 import React from "react";
 import Categories from "./Components/Category";
 import './App.css';
-import Products from './Components/Product/Products';
+import Products from './components/products/products';
 
 const App = () => {
   return (
@@ -12,7 +12,8 @@ const App = () => {
 
       </div>
       <main>
-        <Categories />
+        {/* <Categories /> */}
+
         {/* <Routes>
           <Route path="/furniture" element={<Furniture />} />
           <Route path="/food" element={<Food />} />
