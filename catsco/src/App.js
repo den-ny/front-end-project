@@ -2,15 +2,18 @@ import { Link, Routes, Route } from "react-router-dom";
 import React from "react";
 import Categories from "./Components/Category";
 import './App.css';
+import Products from './components/products/products';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
       <div>
-        <h1>Catsco!</h1>
+        <Products />
+
       </div>
       <main>
-        <Categories />
+        {/* <Categories /> */}
+
         {/* <Routes>
           <Route path="/furniture" element={<Furniture />} />
           <Route path="/food" element={<Food />} />
@@ -20,7 +23,7 @@ function App() {
       </Routes> */}
       </main>
     </div>
-  );
+  )
 }
 
 export default App;
