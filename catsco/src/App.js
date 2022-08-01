@@ -32,9 +32,12 @@ const App = () => {
 
   return (
     <div className="App">
-      <SearchBar />
+      <header><h1>Catco</h1></header>
+      <form>
+        <SearchBar />
+        </form>
       <div></div>
-      <nav>
+      <nav className="navContainer">
         <button onClick={handleClick}>Furniture</button>
         <button onClick={handleClick}>Food</button>
         <button onClick={handleClick}>Toys</button>

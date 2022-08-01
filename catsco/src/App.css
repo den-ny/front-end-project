@@ -1,11 +1,25 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* header{
+  background: url('https://i.imgur.com/rgEUDfm.gif');
+  background-repeat: no-repeat;
+  font-family: Georgia, 'Times New Roman', Times, serif
+  min-height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+} */
+.navContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #2a30aa;
+  padding: 10px;
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -24,9 +38,6 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 
 @keyframes App-logo-spin {
   from {
