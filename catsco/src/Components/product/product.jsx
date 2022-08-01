@@ -1,6 +1,12 @@
 import React from 'react'
-import { card, cardMedia, cardContent, cardActions, Typography, IconButton } from '@material-ui/core';
-import { AddShoppingCart } from '@material-ui/icons';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import IconButton from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 
 import useStyles from '../products/styles';
 
@@ -9,27 +15,27 @@ const Product = ({ product }) => {
   const classes = useStyles();
 
   return (
-    <card className={classes.root}>
-      <cardMedia classname={classes.media} image='' title={product.name} />
-      <cardContent>
+    <Card className={classes.root}>
+      <CardMedia classname={classes.media} image='' title={product.name} />
+      <CardContent>
         <div className={classes.cardContent}>
           <Typography variant='h5' gutterBottom>
-            {product.name}
+            {product.productName}
           </Typography>
           <Typography variant='h5' >
             {product.price}
           </Typography>
         </div>
-        <Typography variant='h2' color='textSecondary'>
+        <Typography variant='h6' color='textSecondary'>
           {product.description}
         </Typography>
-      </cardContent>
-      <cardActions disableSpacing className={classes.cardActions}>
-        <IconButton aria-label='add to cart'>
-          <addShoppingCart />
+      </CardContent>
+      <CardActions disableSpacing className={classes.cardActions}>
+        <IconButton color='secondary' aria-label='add to shopping cart'>
+          <AddShoppingCartIcon />
         </IconButton>
-      </cardActions>
-    </card>
+      </CardActions>
+    </Card>
   )
 }
 

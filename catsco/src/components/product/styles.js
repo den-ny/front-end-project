@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/styles';
 
-function makestyles(() => ({
+function makeStyles(() => ({
   root: {
     maxWidth: '100%',
   },
@@ -19,4 +19,4 @@ function makestyles(() => ({
 
 }));
 
-export default makestyles
+export default makeStyles
