@@ -1,17 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import Cart from "./Components/cart/Cart.jsx";
-import Home from "./Screens/Home.jsx";
-import "./App.css";
+import { useState, useEffect } from 'react';
+import {Link} from 'react-router-dom';
+import Products from "../Components/products/products.jsx";
+import SearchBar from "../Components/SearchBar.jsx";
+import axios from 'axios'
 
-import Products from "./Components/products/products.jsx";
-import SearchBar from "./Components/SearchBar.jsx";
-import Results from "./Components/Results.jsx"
-
-const App = () => {
+export default function Home() {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [display, setDisplay] = useState(false);
   const [goToCart, setGoToCart] = useState(false);
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
@@ -25,48 +23,42 @@ const App = () => {
 
   const handleClick = (e) => {
     const category = e.target.innerText.toLowerCase();
-    if (category === 'cartpage') {
-      setDisplay(false)
-      setGoToCart(true)
-    } else {
+      
       const filteredProducts = products.filter(
         (product) => product.category === category
       );
       setFilteredProducts(filteredProducts);
       setDisplay(true);
-    }
+  
   };
-  const [results, setResults] = useState(false);
+
+  const handleCartClick = (e) => {
+    // window.location(/cart.html)
+    setGoToCart(true);
+  };
 
   return (
-    <div className="App">
+    <div>
       <header><h1>Catco</h1></header>
-      <SearchBar />
-
-      <div></div>
+      <form>
+        <SearchBar />
+      </form>
       <nav className="navContainer">
         <button onClick={handleClick} id="bed">Furniture</button>
         <button onClick={handleClick} id="fish">Food</button>
         <button onClick={handleClick} id="yarn">Toys</button>
         <button onClick={handleClick} id="shoes">Accessories</button>
         <button onClick={handleClick} id="toilet">Litter</button>
-        <button onClick={handleClick} id="cart">CartPage</button>
+        {/* <button onClick={handleCartClick} id="cart">CartPage</button> */}
+        <Link >
+          <button>Go to Cart</button>
+        </Link>
       </nav>
       <div>
         {display ? <Products products={filteredProducts} /> : null}
-
-        <Results />
-        <div className="App">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
-          </Routes>
-
-        </div>
-
+        {/* {display ? <Products products={cartPage} /> : null} */}
 
       </div>
-
-
-
-      export default App;
+    </div>
+  );
+}

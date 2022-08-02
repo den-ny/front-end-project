@@ -1,0 +1,19 @@
+{
+  "name": "front-end-project",
+  "version": "1.0.0",
+  "description": "Cat Store is an elegantly designed, easy-to-use application for shopping cat products. Users can browse and search for various products currently available. They can add items to their cart, inspect their cart, update their cart, and view the total cost of their selections.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/den-ny/front-end-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/den-ny/front-end-project/issues"
+  },
+  "homepage": "https://github.com/den-ny/front-end-project#readme"
+}
