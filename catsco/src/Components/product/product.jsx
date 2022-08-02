@@ -11,9 +11,9 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import useStyles from '../products/styles';
 
 
-const Product = ({ product }) => {
+const Product = ({ product, addCartItems }) => {
   const classes = useStyles();
-
+  console.log(product)
   return (
     <Card className={classes.root}>
       <CardMedia classname={classes.media} image='' title={product.name} />
@@ -34,7 +34,10 @@ const Product = ({ product }) => {
         </Typography>
       </CardContent>
       <CardActions disableSpacing className={classes.cardActions}>
-        <IconButton color='secondary' aria-label='add to shopping cart'>
+        <IconButton onClick={() => {
+          
+          addCartItems({ id: product._id, quantity:1 })
+        }} color='secondary' aria-label='add to shopping cart'>
           <AddShoppingCartIcon />
         </IconButton>
       </CardActions>
