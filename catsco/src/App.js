@@ -10,7 +10,7 @@ const App = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [display, setDisplay] = useState(false);
-
+  const [goToCart, setGoToCart] = useState(false);
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
@@ -24,19 +24,24 @@ const App = () => {
 
   const handleClick = (e) => {
     const category = e.target.innerText.toLowerCase();
-    const filteredProducts = products.filter(
-      (product) => product.category === category
-    );
-    setFilteredProducts(filteredProducts);
-    setDisplay(true);
+    if (category === 'cartpage') {
+      setDisplay(false)
+      setGoToCart(true)
+    } else {
+      const filteredProducts = products.filter(
+        (product) => product.category === category
+      );
+      setFilteredProducts(filteredProducts);
+      setDisplay(true);
+    }
   };
+  const [results, setResults] = useState(false);
 
   return (
     <div className="App">
       <header><h1>Catco</h1></header>
-      <form>
-        <SearchBar bagel={products} />
-      </form>
+      <SearchBar />
+
       <div></div>
       <nav className="navContainer">
         <button onClick={handleClick} id="bed">Furniture</button>
@@ -44,10 +49,13 @@ const App = () => {
         <button onClick={handleClick} id="yarn">Toys</button>
         <button onClick={handleClick} id="shoes">Accessories</button>
         <button onClick={handleClick} id="toilet">Litter</button>
+        <button onClick={handleClick} id="cart">CartPage</button>
       </nav>
       <div>
         {display ? <Products products={filteredProducts} /> : null}
+
         <Results />
+
       </div>
     </div>
   );
