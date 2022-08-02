@@ -3,7 +3,8 @@ import axios from "axios";
 // import Categories from "./Components/Category";
 import "./App.css";
 import Products from "./Components/products/products.jsx";
-import SearchBar from "./Components/SearchBar";
+import SearchBar from "./Components/SearchBar.jsx";
+import Results from "./Components/Results.jsx"
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -34,8 +35,8 @@ const App = () => {
     <div className="App">
       <header><h1>Catco</h1></header>
       <form>
-        <SearchBar />
-        </form>
+        <SearchBar bagel={products} />
+      </form>
       <div></div>
       <nav className="navContainer">
         <button onClick={handleClick} id="bed">Furniture</button>
@@ -45,7 +46,8 @@ const App = () => {
         <button onClick={handleClick} id="toilet">Litter</button>
       </nav>
       <div>
-        { display ? <Products products={filteredProducts} /> : null}
+        {display ? <Products products={filteredProducts} /> : null}
+        <Results />
       </div>
     </div>
   );
