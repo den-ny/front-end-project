@@ -1,7 +1,5 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import axios from "axios";
-import { useEffect } from 'react';
-import Results from './Results.jsx'
 import Products from "./products/products.jsx";
 import { useForm } from "react-hook-form";
 import Nav from '../Components/Nav.jsx'
@@ -49,7 +47,7 @@ function SearchBar() {
         <button id='search-button' type='submit'>Search</button>
       </form>
 
-      <Nav />
+      <Nav usage={usage} setUsage={setUsage} />
       {usage ? <Products products={f} /> : null}
 
     </div>
