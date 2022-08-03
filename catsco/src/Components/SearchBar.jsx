@@ -32,7 +32,6 @@ function SearchBar() {
     }
     else
       setUsage(false)
-
   }
   // console.log(usage)
   return (
