@@ -3,12 +3,11 @@ import { Link } from 'react-router-dom';
 import Products from "../Components/products/products.jsx";
 import axios from 'axios'
 import SearchBar from "../Components/SearchBar.jsx"
-const Nav = ({ set }) => {
+const Nav = () => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [display, setDisplay] = useState(false);
   const [goToCart, setGoToCart] = useState(false);
-  console.log(set)
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
@@ -45,10 +44,10 @@ const Nav = ({ set }) => {
         <button onClick={handleClick} id="yarn">Toys</button>
         <button onClick={handleClick} id="shoes">Accessories</button>
         <button onClick={handleClick} id="toilet">Litter</button>
-        {/* <button onClick={handleCartClick} id="cart">CartPage</button> */}
-        {/* <Link >
-          <button>Go to Cart</button>
-        </Link> */}
+        {/* <Link to="/cart"><button onClick={handleCartClick} id="cart">CartPage</button></Link> */}
+        <Link to="/cart"><button id="cart">CartPage</button></Link>
+        {/* <button>Go to Cart</button> */}
+        {/* </Link> */}
       </nav>
       <div>
         {display ? <Products products={filteredProducts} /> : null}
