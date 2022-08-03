@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/den-ny/front-end-project/issues"
   },
-  "homepage": "https://github.com/den-ny/front-end-project#readme"
+  "homepage": "https://github.com/den-ny/front-end-project#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "mongoose": "^6.5.1",
+    "nodemon": "^2.0.19"
+  },
+  "devDependencies": {}
 }
