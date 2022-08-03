@@ -1,20 +1,57 @@
 import { useState } from 'react'
-
+import axios from "axios";
+import { useEffect } from 'react';
+import Results from './Results.jsx'
+import Products from "./products/products.jsx";
+import { useForm } from "react-hook-form";
+import Nav from '../Components/Nav.jsx'
 function SearchBar() {
-  const [searchTerm, setSearchTerm] = useState('')
-  
+  const [searchTerm, setSearchTerm] = useState('_')
+  const [f, setF] = useState([]);
+  const [usage, setUsage] = useState(false)
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const response = await axios.get(
+        `https://cat-co.herokuapp.com/api/products?name=${searchTerm}`
+      );
+      if (typeof response.data !== 'string')
+        setF(response.data)
+      else
+        setF([])
+    };
+    getProducts();
+  }, [searchTerm]);
+
+
+  const { handleSubmit } = useForm();
+  const onSubmit = (data, e) => {
+    const input = (e.target[0].value);
+    //edge case 
+    if (input.length !== 0) {
+      setSearchTerm(input)
+      setUsage(true)
+    }
+    else
+      setUsage(false)
+
+  }
+  // console.log(usage)
   return (
+
     <div id='search-bar-container'>
-      <form>
+      <form onSubmit={handleSubmit(onSubmit)}>
+
         <input
           id='search-box'
-          onChange={(e) => {
-            setSearchTerm(e.target.value)
-            console.log(searchTerm)
-          }}
-        />
+          placeholder="search for product" />
+
         <button id='search-button' type='submit'>Search</button>
       </form>
+
+      <Nav />
+      {usage ? <Products products={f} /> : null}
+
     </div>
   )
 }
