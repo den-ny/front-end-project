@@ -2,9 +2,14 @@ import Products from "./product/product.jsx"
 import { useState, useEffect } from "react"
 const Results = ({ f, qwe }) => {
   // console.log(f, qwe)
-  const [display, setD] = useState(false)
-  console.log(f, qwe)
-  console.log("dsadsa")
+
+  // console.log(f, qwe)
+  console.log(f)
+  // useEffect(() => {
+  //   setD(qwe)
+  // }, [])
+
+  // console.log(display)
   // useEffect(() => {
   //   const q = async () => {
   //     await setD(qwe)
@@ -14,8 +19,8 @@ const Results = ({ f, qwe }) => {
   // }, [])
   return (
     <div>
-      {/* {f} */}
-      {display ? <Products products={f} /> : "sadsad"}
+      {/* {f.length > 0 ? "yes" : "no"} */}
+      {f.length > 0 ? <Products products={f} /> : "nah"}
       {/* <Products products={f} /> */}
 
     </div>

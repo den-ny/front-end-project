@@ -4,56 +4,53 @@ import { useEffect } from 'react';
 import Results from './Results.jsx'
 import Products from "./products/products.jsx";
 import { useForm } from "react-hook-form";
-
-function SearchBar(bagel) {
-  const [result, setResult] = useState(false)
-  const [searchTerm, setSearchTerm] = useState("")
+import Nav from '../Components/Nav.jsx'
+function SearchBar() {
+  const [searchTerm, setSearchTerm] = useState('_')
   const [f, setF] = useState([]);
+  const [usage, setUsage] = useState(false)
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
         `https://cat-co.herokuapp.com/api/products?name=${searchTerm}`
       );
-      // setF(response.data);
-      console.log(response.data)
+      if (typeof response.data !== 'string')
+        setF(response.data)
+      else
+        setF([])
     };
     getProducts();
-  }, []);
-  console.log(f)
-  // (<Results f={f} qwe={true} />)
-  const { register, handleSubmit } = useForm();
+  }, [searchTerm]);
+
+
+  const { handleSubmit } = useForm();
   const onSubmit = (data, e) => {
     const input = (e.target[0].value);
-    // console.log("dsadsa")
-    setSearchTerm(input)
+    //edge case 
+    if (input.length !== 0) {
+      setSearchTerm(input)
+      setUsage(true)
+    }
+    else
+      setUsage(false)
 
-    // console.log(typeof input)
   }
-  // const onError = (errors, e) => console.log(errors, e.target);
-  // console.log(f)
+  // console.log(usage)
   return (
 
     <div id='search-bar-container'>
       <form onSubmit={handleSubmit(onSubmit)}>
-        {/* <form onSubmit={handleClick}> */}
+
         <input
           id='search-box'
-          // onChange={(e) => {
-          //   setSearchTerm(e.target.value)
-          // }}
           placeholder="search for product" />
 
         <button id='search-button' type='submit'>Search</button>
       </form>
 
-
-      <div className="hidden">
-        {/* <Results f={f} qwe={true} /> */}
-
-        {/* (<Results f={f} qwe={true} />) */}
-        <Products products={f} />
-        {/* (<Results f={f} qwe={true} />) */}
-      </div>
+      <Nav />
+      {usage ? <Products products={f} /> : null}
 
     </div>
   )
