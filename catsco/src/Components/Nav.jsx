@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import Products from "../Components/products/products.jsx";
 import axios from 'axios'
 import SearchBar from "../Components/SearchBar.jsx"
-const Nav = () => {
+
+const Nav = ({ usage, setUsage }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [display, setDisplay] = useState(false);
@@ -20,7 +21,7 @@ const Nav = () => {
   }, []);
 
   const handleClick = (e) => {
-
+    setUsage(false)
     const category = e.target.innerText.toLowerCase();
 
     const filteredProducts = products.filter(
@@ -50,7 +51,7 @@ const Nav = () => {
         {/* </Link> */}
       </nav>
       <div>
-        {display ? <Products products={filteredProducts} /> : null}
+        {display ? !usage ? <Products products={filteredProducts} /> : null : null}
         {/* {display ? <Products products={cartPage} /> : null} */}
         {/* <SearchBar set={false} /> */}
       </div>
