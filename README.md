@@ -40,6 +40,7 @@ Cart Schema{
 ```
 ## Technologies Used:
 **Front-End** : React, Axios, Material-UI
+
 **Back-End** : Node, Express, Mongoose
 
 ### Whimsical Flowchart: 
