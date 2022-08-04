@@ -1,18 +1,15 @@
 # Catco
+Catco is an elegantly designed, easy-to-use application for shopping cat products. Users can browse and search for various products currently available. They can add items to their cart, inspect their cart, update their cart, and view the total cost of their selections. 
 
-**Front-End Repo:** https://github.com/den-ny/front-end-project/
+## Front-End: 
+- Repo: https://github.com/den-ny/front-end-project/ 
+- Deployed (Surge): (https://catco.surge.sh/)
 
-**Back-End Repo:** https://github.com/den-ny/back-end-project/
-
-**Heroku:** https://cat-co.herokuapp.com/api/products/all
-
-**Surge:** https://catco.surge.sh/
-
-### Overview
-Cat Store is an elegantly designed, easy-to-use application for shopping cat products. Users can browse and search for various products currently available. They can add items to their cart, inspect their cart, update their cart, and view the total cost of their selections. 
+## Back-End:
+- Repo; https://github.com/den-ny/back-end-project/ 
+- Deployed (Heroku): https://cat-co.herokuapp.com/api/products/all
 
 ## Team Members
-
 - Denny Wong 
 - Adam Bachrach
 - Christine Manna
