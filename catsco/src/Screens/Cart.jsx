@@ -1,12 +1,8 @@
 import React from 'react';
-import Product from '../product/product.jsx';
-import UseStyles from './styles';
 import { useState, useEffect } from 'react';
 import axios from "axios"
-import { Grid, Typography } from '@material-ui/core';
-import DeleteIcon from '@mui/icons-material/Delete';
-import Chad from './styles';
-
+import { Grid } from '@material-ui/core';
+import Chad from '../Components/cart/styles';
 
 export default function Cart() {
   const [products, setProducts] = useState([]);
@@ -20,14 +16,13 @@ export default function Cart() {
       setProducts(response.data);
       let cartTotal = 0
       response.data.forEach((item) => {
-        cartTotal += item.price
+        cartTotal += item.totalPrice
       })
       setTotal(cartTotal)
     };
     getProducts();
   }, []);
 
-  // const classes = useStyles();
   const [cartItems, setCartItems] = useState(JSON.parse(localStorage.getItem('cart')) || []);
 
   const addCartItems = ({ _id, price }) => {
@@ -46,7 +41,6 @@ export default function Cart() {
     if (!foundItem) {
       cart.push({ _id, quantity, price });
     }
-
     localStorage.setItem('cart', JSON.stringify(cart));
     setCartItems(cart);
   }
@@ -61,7 +55,7 @@ export default function Cart() {
         ))}
       </Grid>
       <h1>
-        {total}
+        Cart Total: ${total}
       </h1>
 
     </main>

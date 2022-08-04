@@ -1,14 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Products from "../Components/products/products.jsx";
+import Products from "./ProductsCategory.jsx";
 import axios from 'axios'
-import SearchBar from "../Components/SearchBar.jsx"
 
 const Nav = ({ usage, setUsage }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [display, setDisplay] = useState(false);
-  const [goToCart, setGoToCart] = useState(false);
+
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get(
@@ -29,12 +28,6 @@ const Nav = ({ usage, setUsage }) => {
     );
     setFilteredProducts(filteredProducts);
     setDisplay(true);
-
-  };
-
-  const handleCartClick = (e) => {
-    // window.location(/cart.html)
-    setGoToCart(true);
   };
 
   return (
@@ -45,15 +38,13 @@ const Nav = ({ usage, setUsage }) => {
         <button onClick={handleClick} id="yarn">Toys</button>
         <button onClick={handleClick} id="shoes">Accessories</button>
         <button onClick={handleClick} id="toilet">Litter</button>
-        {/* <Link to="/cart"><button onClick={handleCartClick} id="cart">CartPage</button></Link> */}
+
         <Link to="/cart"><button id="cart">CartPage</button></Link>
-        {/* <button>Go to Cart</button> */}
-        {/* </Link> */}
+
       </nav>
       <div>
         {display ? !usage ? <Products products={filteredProducts} /> : null : null}
-        {/* {display ? <Products products={cartPage} /> : null} */}
-        {/* <SearchBar set={false} /> */}
+
       </div>
     </div>
   )

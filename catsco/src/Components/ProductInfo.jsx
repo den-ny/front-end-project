@@ -5,12 +5,8 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import IconButton from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-
-import useStyles from '../products/styles';
-import { Link } from 'react-router-dom';
-import Cart from "../../Components/cart/Cart"
+import useStyles from './products/styles';
 import axios from "axios"
 
 const Product = ({ product, addCartItems }) => {
@@ -26,7 +22,7 @@ const Product = ({ product, addCartItems }) => {
   };
   const addToCart = async () => {
     await axios(config)
-      .then(res => console.log(JSON.stringify(res.data))) //for dev, remove pls
+      .then(res => console.log(`${res.data.productName} has been added to your cart`))
       .catch(error => console.error(error))
   }
 

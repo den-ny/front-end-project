@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid } from '@material-ui/core';
-import Product from '../product/product.jsx';
+import Product from './ProductInfo.jsx';
 
 const Raul = ({ products }) => {
   const [cartItems, setCartItems] = React.useState(JSON.parse(localStorage.getItem('cart')) || [])
