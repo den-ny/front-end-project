@@ -16,7 +16,7 @@ const Chad = ({ product, addCartItems, deleteIcon }) => {
   const [config, setConfig] = useState({});
   const deleteConfig = {
     method: 'delete',
-    url: 'http://cat-co.herokuapp.com/api/cart/',
+    url: 'https://cat-co.herokuapp.com/api/cart/',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -25,7 +25,7 @@ const Chad = ({ product, addCartItems, deleteIcon }) => {
 
   const increaseItemConfig = {
     method: 'put',
-    url: 'http://cat-co.herokuapp.com/api/cart/',
+    url: 'https://cat-co.herokuapp.com/api/cart/',
     headers: {
       'Content-Type': 'application/json'
     },
@@ -38,7 +38,7 @@ const Chad = ({ product, addCartItems, deleteIcon }) => {
 
   const decreaseItemConfig = {
     method: 'put',
-    url: 'http://cat-co.herokuapp.com/api/cart/',
+    url: 'https://cat-co.herokuapp.com/api/cart/',
     headers: {
       'Content-Type': 'application/json'
     },
