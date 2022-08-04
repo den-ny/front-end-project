@@ -38,6 +38,9 @@ Cart Schema{
   totalPrice: Number
 }
 ```
+## Technologies Used:
+**Front-End** : React, Axios, Material-UI
+**Back-End** : Node, Express, Mongoose
 
 ### Whimsical Flowchart: 
 https://whimsical.com/project-8-KeVEcumxySvKwfVd3BR1zC
@@ -48,4 +51,4 @@ https://docs.google.com/document/d/1vOLs3O09G5gyZ4eM4VxjcYQg-7hD-FV4Q2KGM1vuoHM
 ### MVP:
 * Allows user to search for products in store
 * Allows user to add product to cart
-* Allows user to view product information 
+* Allows user to view different product categories 
