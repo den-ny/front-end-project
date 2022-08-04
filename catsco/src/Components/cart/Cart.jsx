@@ -6,10 +6,7 @@ import axios from "axios"
 import { Grid, Typography } from '@material-ui/core';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Chad from './styles';
-<<<<<<< HEAD
-=======
 
->>>>>>> origin
 
 export default function Cart() {
   const [products, setProducts] = useState([]);
