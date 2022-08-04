@@ -14,7 +14,7 @@ const Product = ({ product, addCartItems }) => {
 
   const config = {
     method: 'post',
-    url: 'http://cat-co.herokuapp.com/api/cart/',
+    url: 'https://cat-co.herokuapp.com/api/cart/',
     headers: {
       'Content-Type': 'application/json'
     },
