@@ -12,22 +12,13 @@ ProductInformation Schema{
   }
 ```
 ```
-ProductCategory Schema:	{
-  Furniture : [{ 
-    ProductInfo: {..}
-  }],
-  Toys: [{ 
-    ProductInfo: {..}
-  }],
-  Food: [{ 
-    ProductInfo: {..}
-  }],
-  Litter: [{ 
-    Product: {..}
-  }],
-  Accessories: [{ 
-    Product: {..}
-  }]
+Cart Schema{
+  productNumber: Number,
+  productName: String,
+  photoSrc: String,
+  price: Number,
+  quantity: Number,
+  totalPrice: Number
 }
 ```
 
