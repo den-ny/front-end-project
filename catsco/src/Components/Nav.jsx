@@ -39,7 +39,7 @@ const Nav = ({ usage, setUsage }) => {
         <button onClick={handleClick} id="shoes">Accessories</button>
         <button onClick={handleClick} id="toilet">Litter</button>
 
-        <Link to="/cart"><button id="cart">CartPage</button></Link>
+        <Link to="/cart"><button id="cart">Cart</button></Link>
 
       </nav>
       <div>
