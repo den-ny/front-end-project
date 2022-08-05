@@ -38,7 +38,9 @@ Cart Schema{
 ## Technologies Used:
 **Front-End** : React, Axios, Material-UI, Surge
 
-**Back-End** : Node, Express, Mongoose, Heroku 
+**Back-End** : Node, Express, Mongoose, Heroku, MongoDB Atlas
+
+**Others** : Postman, Whimsical
 
 ### Whimsical Flowchart: 
 https://whimsical.com/project-8-KeVEcumxySvKwfVd3BR1zC
